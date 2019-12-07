@@ -7,6 +7,57 @@
 
 <h2>Index</h2>
 
+
+
+<div class="form-group">
+    <fieldset>
+        <legend>Search Filter</legend>
+        @{
+            @*Open up a form that will go to the Filter method on the cars controller with a POST request*@
+            using (Html.BeginForm(
+                "Filter", //Action (method) to submit form to.
+                "Beverages", //Controller to submit form to.
+                FormMethod.Post, //Sets Request method to post
+                new { @class = "form-inline" } //Will add css class to form element.
+                
+            ))
+            {
+                @*Render out a AntiForgery Token for the from.*@
+                @Html.AntiForgeryToken(); //Look up in PHP
+                <label for="name">Name</label>
+                @Html.TextBox("name", (string)ViewBag.filterName)
+                <label for="pack">Pack</label>
+                @Html.TextBox("pack", (string)ViewBag.filterPack)
+                <label for="min">Min Price</label>
+                @Html.TextBox("min", (string)ViewBag.filtermin)
+                <label for="max">Max Price</label>
+                @Html.TextBox("max", (string)ViewBag.filterMax)
+
+                <input type="submit"
+                       value="filter"
+                       class="btn btn-info pull-right" />
+                       //For Clearing
+                <input type="button"
+                       value="clear"
+                       class="btn btn-info pull-right" 
+                       onclick="clearForm"/>
+            }
+        }
+    </fieldset>
+
+</div>
+
+
+<script>
+    //Trying to clear the form.  Because of stuff, I can't seem to get it right now.  I'll keep working on it.
+    function clearForm() {
+        document.getElementById("logoutForm").reset().submit();
+        HTMLFormElement.reset();
+        alert("stuff");
+    }
+</script>
+
+
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
