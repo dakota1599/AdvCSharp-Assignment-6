@@ -7,6 +7,19 @@
 
 <h2>Index</h2>
 
+<script>
+    //Clears all the fields then submits the form.
+    function clearForm() {
+        //Clears Values
+        document.getElementById("name").value = "";
+        document.getElementById("pack").value = "";
+        document.getElementById("min").value = "";
+        document.getElementById("max").value = "";
+
+        document.getElementById("myForm").submit(); //Submitting form
+    }
+</script>
+
 
 
 <div class="form-group">
@@ -14,14 +27,14 @@
         <legend>Search Filter</legend>
         @{
             @*Open up a form that will go to the Filter method on the cars controller with a POST request*@
-            using (Html.BeginForm(
-                "Filter", //Action (method) to submit form to.
-                "Beverages", //Controller to submit form to.
-                FormMethod.Post, //Sets Request method to post
-                new { @class = "form-inline" } //Will add css class to form element.
-                
-            ))
-            {
+        using (Html.BeginForm(
+            "Filter", //Action (method) to submit form to.
+            "Beverages", //Controller to submit form to.
+            FormMethod.Post, //Sets Request method to post
+            new { @class = "form-inline", @id = "myForm" } //Will add css class and id to form.
+
+        ))
+        {
                 @*Render out a AntiForgery Token for the from.*@
                 @Html.AntiForgeryToken(); //Look up in PHP
                 <label for="name">Name</label>
@@ -40,22 +53,13 @@
                 <input type="button"
                        value="clear"
                        class="btn btn-info pull-right" 
-                       onclick="clearForm"/>
+                       onclick="clearForm()"/>
             }
         }
     </fieldset>
 
 </div>
 
-
-<script>
-    //Trying to clear the form.  Because of stuff, I can't seem to get it right now.  I'll keep working on it.
-    function clearForm() {
-        document.getElementById("logoutForm").reset().submit();
-        HTMLFormElement.reset();
-        alert("stuff");
-    }
-</script>
 
 
 <p>

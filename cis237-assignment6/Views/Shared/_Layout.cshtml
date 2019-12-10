@@ -1,33 +1,41 @@
 ﻿<!DOCTYPE html>
 <html>
 <head>
+    <!--This is a link to the css I use for my website.-->
+    <link type="text/css" rel="stylesheet" href="http://dakotashapiro.info/core/css/w3schools.css" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>@ViewBag.Title - Beverage Incorporated</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
 
+    <style>
+        .nav-margin-bottom {
+            margin-bottom: 2em;
+        }
+    </style>
+
 </head>
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
+    <div class="w3-top w3-green w3-bar nav-margin-bottom">
         <div class="container">
-            <div class="navbar-header">
+            <div class="">
                 <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                @Html.ActionLink("Bev Inc.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <span class="w3-button w3-bar-item">@Html.ActionLink("Bev Inc.", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })</span>
             </div>
-            <div class="navbar-collapse collapse">
+            <div class="navbar-collapse collapse w3-text-white">
                 <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
+                    <li class="w3-button w3-bar-item">@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li class="w3-button w3-bar-item">@Html.ActionLink("About", "About", "Home")</li>
+                    <li class="w3-button w3-bar-item">@Html.ActionLink("Contact", "Contact", "Home")</li>
 
                     @*If logged in, user gets to see this navigation button.*@
                     @if (Request.IsAuthenticated) {
-                    <li>@Html.ActionLink("Beverages", "Index", "Beverages")</li>
+                    <li class="w3-button w3-bar-item ">@Html.ActionLink("Beverages", "Index", "Beverages")</li>
                     }
 
                 </ul>

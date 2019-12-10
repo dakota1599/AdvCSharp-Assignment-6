@@ -6753,5 +6753,10 @@ button.close {
   .hidden-print {
     display: none !important;
   }
+
+}
+
+.nav li{
+    color: blue;
 }
 /*# sourceMappingURL=bootstrap.css.map */
