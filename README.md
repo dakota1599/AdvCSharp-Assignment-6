@@ -3,10 +3,12 @@
 ## Due: 12-13-2019
 
 ## Author
-
+Dakota Shapiro
 
 
 ## Description
+
+I know it wasn't extra credit, but I added a functioning filter clear button.
 
 You are to create a web application using ASP.NET MVC to manage our beverage database.
 The application should have the following pages and navigation:
@@ -134,7 +136,8 @@ the culprit, but I don't know which ones.
 | **Total**                               | **100**|
 
 ## Outside Resources Used
-
+Uses my website's CSS (http://dakotashapiro.info/core/css/w3schools.css)
 
 
 ## Known Problems, Issues, And/Or Errors in the Program
+N/A

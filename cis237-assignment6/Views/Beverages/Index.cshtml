@@ -27,14 +27,15 @@
         <legend>Search Filter</legend>
         @{
             @*Open up a form that will go to the Filter method on the cars controller with a POST request*@
-        using (Html.BeginForm(
-            "Filter", //Action (method) to submit form to.
-            "Beverages", //Controller to submit form to.
-            FormMethod.Post, //Sets Request method to post
-            new { @class = "form-inline", @id = "myForm" } //Will add css class and id to form.
 
-        ))
-        {
+            using (Html.BeginForm(
+                "Filter", //Action (method) to submit form to.
+                "Beverages", //Controller to submit form to.
+                FormMethod.Post, //Sets Request method to post
+                new { @class = "form-inline", @id = "myForm" } //Will add css class and id to form.
+
+            ))
+            {
                 @*Render out a AntiForgery Token for the from.*@
                 @Html.AntiForgeryToken(); //Look up in PHP
                 <label for="name">Name</label>
@@ -49,11 +50,11 @@
                 <input type="submit"
                        value="filter"
                        class="btn btn-info pull-right" />
-                       //For Clearing
+                //For Clearing
                 <input type="button"
                        value="clear"
-                       class="btn btn-info pull-right" 
-                       onclick="clearForm()"/>
+                       class="btn btn-info pull-right"
+                       onclick="clearForm()" />
             }
         }
     </fieldset>
